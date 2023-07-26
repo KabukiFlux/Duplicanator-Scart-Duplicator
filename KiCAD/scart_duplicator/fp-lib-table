@@ -1,0 +1,10 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "kabuki")(type "KiCad")(uri "${KIPRJMOD}/kabuki.pretty")(options "")(descr ""))
+  (lib (name "scart")(type "KiCad")(uri "${KIPRJMOD}/scart.pretty")(options "")(descr ""))
+  (lib (name "C2652746")(type "KiCad")(uri "${KIPRJMOD}/C2652746.pretty")(options "")(descr ""))
+  (lib (name "C445482")(type "KiCad")(uri "${KIPRJMOD}/C445482.pretty")(options "")(descr ""))
+  (lib (name "C169223")(type "KiCad")(uri "${KIPRJMOD}/C169223.pretty")(options "")(descr ""))
+  (lib (name "C309366")(type "KiCad")(uri "${KIPRJMOD}/C309366.pretty")(options "")(descr ""))
+  (lib (name "C18124")(type "KiCad")(uri "${KIPRJMOD}/C18124.pretty")(options "")(descr ""))
+)

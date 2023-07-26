@@ -1,0 +1,121 @@
+
+(rules PCB scart_duplicator
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3187)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 350.0)
+    (clearance 200.0)
+    (clearance 175.0 (type smd_to_turn_gap))
+    (clearance 200.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+    (clearance 200.0 (type Power))
+    (clearance 200.0 (type kicad))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_1000:600_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_1000:600_um" "Via[0-1]_1000:600_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_1000:600_um-kicad_default" "Via[0-1]_1000:600_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via 
+    "Via[0-1]_1000:600_um-Power" "Via[0-1]_1000:600_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_1000:600_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 350.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "/CSYNC_IN" "Net-(U1-CH1IN)" "/R_IN" "Net-(U1-CH2IN)" "/G_IN" "Net-(U1-CH3IN)" "/B_IN" "Net-(U1-CH4IN)"
+    GND "Net-(C6-Pad1)" "/CSYNC_OUT1" "Net-(C7-Pad1)" "/R_OUT1" "Net-(C8-Pad1)" "/G_OUT1" "Net-(C9-Pad1)"
+    "/B_OUT1" "Net-(C10-Pad1)" "/CSYNC_OUT2" "Net-(C11-Pad1)" "/R_OUT2" "Net-(C12-Pad1)" "/G_OUT2" "Net-(C13-Pad1)"
+    "/B_OUT2" "unconnected-(J1-P1-Pad1)" "/AUDIO_RIGHT" "unconnected-(J1-P3-Pad3)" "/AUDIO_GND" "/AUDIO_LEFT" /SWITCHING "unconnected-(J1-P10-Pad10)"
+    "unconnected-(J1-P12-Pad12)" "unconnected-(J1-P14-Pad14)" "unconnected-(J1-P16-Pad16)" "unconnected-(J1-P19-Pad19)" "unconnected-(J2-P2-Pad2)" "unconnected-(J2-P6-Pad6)" "unconnected-(J2-P10-Pad10)" "unconnected-(J2-P12-Pad12)"
+    "unconnected-(J2-P14-Pad14)" "Net-(J2-P16)" "unconnected-(J2-P20-Pad20)" "unconnected-(J3-P2-Pad2)" "unconnected-(J3-P6-Pad6)" "unconnected-(J3-P10-Pad10)" "unconnected-(J3-P12-Pad12)" "unconnected-(J3-P14-Pad14)"
+    "Net-(J3-P16)" "unconnected-(J3-P20-Pad20)" "Net-(JP1-C)" "Net-(U1-CH1OUT)" "Net-(U1-CH2OUT)" "Net-(U1-CH3OUT)" "Net-(U1-CH4OUT)" "unconnected-(U1-NC-Pad7)"
+    "unconnected-(U1-NC-Pad8)" "unconnected-(USB1-A5_cc1-Pad3)" "unconnected-(USB1-B5_cc2-Pad4)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 350.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    +5V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
