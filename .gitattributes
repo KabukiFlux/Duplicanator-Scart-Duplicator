@@ -1,15 +1,7 @@
 # I want to show KiCAD as main project source
 *.html linguist-detectable=false
 *.htm linguist-detectable=false
-*.kicad-pcb linguist-detectable=true
+*.kicad_pcb linguist-detectable=true
 *.kicad_pro linguist-detectable=true
 *.kicad_sch linguist-detectable=true
 *.kicad_mod linguist-detectable=true
-/**/*.kicad-pcb linguist-language=KiCad
-/**/*.kicad_pro linguist-language=KiCad
-/**/*.kicad_sch linguist-language=KiCad
-/**/*.kicad_mod linguist-language=KiCad
-*.kicad_mod linguist-vendored=true
-*.kicad-pcb linguist-vendored=true
-*.kicad_pro linguist-vendored=true
-*.kicad_sch linguist-vendored=true
